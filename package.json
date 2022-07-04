@@ -1,0 +1,17 @@
+{
+  "name": "remark-play",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "repository": "git@github.com:dwjohnston/remark-play.git",
+  "author": "David Johnston <djohnston@cydarm.com>",
+  "license": "MIT",
+  "dependencies": {
+    "rehype-sanitize": "^5.0.1",
+    "rehype-stringify": "^9.0.3",
+    "remark-grid-tables": "^2.1.2",
+    "remark-parse": "^10.0.1",
+    "remark-rehype": "^10.1.0",
+    "unified": "^10.1.2"
+  }
+}
