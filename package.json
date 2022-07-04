@@ -7,11 +7,11 @@
   "author": "David Johnston <djohnston@cydarm.com>",
   "license": "MIT",
   "dependencies": {
-    "rehype-sanitize": "^5.0.1",
-    "rehype-stringify": "^9.0.3",
+    "rehype-sanitize": "^4.0.0",
+    "rehype-stringify": "^8.0.0",
     "remark-grid-tables": "^2.1.2",
-    "remark-parse": "^10.0.1",
-    "remark-rehype": "^10.1.0",
-    "unified": "^10.1.2"
+    "remark-parse": "^8.0.3",
+    "remark-rehype": "^7.0.0",
+    "unified": "^9.2.0"
   }
 }

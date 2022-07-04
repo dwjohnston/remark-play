@@ -1,4 +1,4 @@
-import {unified} from 'unified'
+import unified from 'unified'
 import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
 import rehypeSanitize from 'rehype-sanitize'
@@ -11,27 +11,34 @@ main()
 async function main() {
   const file = await unified()
     .use(remarkParse)
-    .use(remarkRehype)
-    .use(rehypeSanitize)
-    .use(rehypeStringify)
     .use(remarkGridTables)
-    .process(`
-    +-------+----------+------+
-    | Table Headings   | Here |
-    +-------+----------+------+
-    | Sub   | Headings | Too  |
-    +=======+==========+======+
-    | cell  | column spanning |
-    + spans +----------+------+
-    | rows  | normal   | cell |
-    +-------+----------+------+
-    | multi | cells can be    |
-    | line  | *formatted*     |
-    |       | **paragraphs**  |
-    | cells |                 |
-    | too   |                 |
-    +-------+-----------------+
-    `)
+    .use(remarkRehype)
+    .use(rehypeStringify)
 
-  console.log(String(file))
+    .process(`
+
+# Grid table
+
+## Basic example
+
++-------+----------+------+
+| Table Headings   | Here |
++-------+----------+------+
+| Sub   | Headings | Too  |
++=======+==========+======+
+| cell  | column spanning |
++ spans +----------+------+
+| rows  | normal   | cell |
++-------+----------+------+
+| multi | cells can be    |
+| line  | *formatted*     |
+|       | **paragraphs**  |
+| cells |                 |
+| too   |                 |
++-------+-----------------+
+
+    `, (err, file) => {
+        console.log({err, file});
+    })
+
 }
